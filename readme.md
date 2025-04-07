@@ -1,13 +1,13 @@
-## Lets Learn React
+### Lets Learn React
 
 # the intital entry point for us in react :
 
 pakage.json file is the file which contain all the essential to start the react project
 particulary the " script " contains all the methods like , dev , test , build , start
 
-## while developement we use "dev"
+while developement we use "dev"
 
-## and to finally deploy we use the build script and then only use build folder instead of our entire react app
+and to finally deploy we use the build script and then only use build folder instead of our entire react app
 
 ### VITE
 
