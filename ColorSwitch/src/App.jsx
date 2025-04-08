@@ -1,35 +1,36 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import tailwindcss from "tailwindcss";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const changeBackground = function (color){
+    return function(){
+      document.getElementById('body').style.backgroundColor = color ; 
 
+    }
+  }
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className="flex flex-col h-screen">
+        {/* Main content */}
+        <div className="flex-grow"></div>
+
+        {/* Buttons at the bottom */}
+        <div className="absolute bottom-0 w-full flex justify-center gap-4 p-4 bg-black rounded-full">
+          <button className="px-4 py-2 bg-red-500 text-white rounded"
+          onClick={changeBackground("red")}>Red</button>
+          <button className="px-4 py-2 bg-blue-500 text-white rounded"
+          onClick={changeBackground("blue")}>Blue</button>
+          <button className="px-4 py-2 bg-green-500 text-white rounded"
+          onClick={changeBackground("Green")}>Green</button>
+          <button className="px-4 py-2 bg-yellow-500 text-white rounded"
+          onClick={changeBackground("yellow")}>Yellow</button>
+          <button className="px-4 py-2 bg-purple-500 text-white rounded"
+          onClick={changeBackground("purple")}>Purple</button>
+          <button className="px-4 py-2 bg-pink-500 text-white rounded"
+          onClick={changeBackground("pink")}>Pink</button>
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
