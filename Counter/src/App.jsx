@@ -1,33 +1,37 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
+import { useState } from "react";
 function App() {
-  const [count, setCount] = useState(0)
+  // let count  = 15  ; 
+  let [counter , setCounter] = useState(11)  ;
+  // counter is a varible which holds the value to be modifiesd , can name it nanything a ,b , laveesh , value .... 
+  // setCounter us the function which is used to set the valuse , can name it anything seta , changeLaveesh , function...
+  // useState (11) sets the default variable value , here counter = 11 ; 
 
+  const addValue  = () => {
+    // console.log("value is added " , Math.random()) ; 
+    if(counter+1>20) return ; 
+    else {
+      counter = counter+1 ; 
+      setCounter(counter) ; 
+    }
+
+    // count += 1 ; 
+    // console.log(count ) ; 
+  }
+  const subValue = () => {
+    if(counter-1 < 0 ) return ; 
+    else {
+      counter -= 1 ; 
+      setCounter(counter) ; 
+    }
+
+  }
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+    <h1>Counter : {counter}</h1>
+    <button 
+    onClick={addValue}>Increase</button>
+    <button
+    onClick={subValue}>Decrease</button>
     </>
   )
 }
