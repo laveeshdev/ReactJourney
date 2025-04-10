@@ -16,3 +16,5 @@ and to finally deploy we use the build script and then only use build folder ins
 " npm create vite@latest"
 But this doesnt contain the node modules , just react stuff , thus we further install node in it
 "npm install "
+
+# have deleted node_modules on local machine to ensure storage is not wasted for multiple files
